@@ -7,7 +7,7 @@ export const portfolio = {
   email: "surabhi.mendiratta@gmail.com",
   social: {
     linkedin: "https://www.linkedin.com/in/surabhi-m-38875539/",
-    github: "https://github.com",
+    github: "https://github.com/SurabhiM87",
   },
   resume: "/resume.pdf",
   technologyGroups: [
