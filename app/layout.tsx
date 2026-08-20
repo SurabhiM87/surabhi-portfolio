@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import { headers } from "next/headers";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
@@ -13,22 +12,29 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Surabhi Mendiratta — Senior Full-Stack Software Engineer";
-const description = "Surabhi Mendiratta builds thoughtful, reliable products from user interface to distributed systems.";
+const title = "Surabhi Mendiratta | Senior Full-Stack Software Engineer";
+const description = "Senior Full-Stack Software Engineer building thoughtful, scalable products end to end across frontend, backend, cloud, and AI.";
 
-export async function generateMetadata(): Promise<Metadata> {
-  const incoming = await headers();
-  const host = incoming.get("x-forwarded-host") ?? incoming.get("host") ?? "localhost:3000";
-  const protocol = incoming.get("x-forwarded-proto") ?? (host.startsWith("localhost") ? "http" : "https");
-  const image = `${protocol}://${host}/og.png`;
-  return {
+export const metadata: Metadata = {
+  metadataBase: new URL("https://surabhimendiratta.com"),
+  title,
+  description,
+  alternates: { canonical: "/" },
+  openGraph: {
     title,
     description,
-    icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
-    openGraph: { title, description, type: "website", images: [{ url: image, width: 1731, height: 909, alt: "Surabhi Mendiratta — From pixels to platforms" }] },
-    twitter: { card: "summary_large_image", title, description, images: [image] },
-  };
-}
+    type: "website",
+    url: "/",
+    siteName: "Surabhi Mendiratta",
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "Surabhi Mendiratta — From pixels to platforms" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title,
+    description,
+    images: ["/og.png"],
+  },
+};
 
 export default function RootLayout({
   children,
