@@ -27,9 +27,9 @@ export const portfolio = {
   ],
   principles: ["Own the problem, not just the ticket.", "Simple systems beat clever systems.", "Design for failure.", "Understand the user before designing the architecture.", "Automate repetitive work.", "Keep learning."],
   beyondCode: [
-    { title: "Harmony Power", description: "I volunteer as Community Outreach Manager, supporting programs focused on empowering children and communities.", href: "https://harmonypowernow.org/", image: "/images/harmony-power.jpeg" },
-    { title: "Cooking", description: "I love cooking and experimenting with recipes—ingredients, iteration, and eventually something people enjoy.", href: "https://www.instagram.com/make_this_at_home/", image: "/images/cooking.png" },
-    { title: "Learning", description: "I genuinely enjoy learning new technologies and understanding how systems work.", href: null, image: null },
+    { title: "Harmony Power", description: "I volunteer as Community Outreach Manager, supporting programs focused on empowering children and communities.", url: "https://harmonypowernow.org/", image: "/images/harmony-power.jpeg" },
+    { title: "Cooking", description: "I love cooking, experimenting with new recipes, and bringing people together over good food.", url: "https://www.instagram.com/make_this_at_home/", image: "/images/cooking.png" },
+    { title: "Building with AI", description: "I love experimenting with AI tools and finding new ways to turn ideas into working software faster.", url: null, image: null },
   ],
   experience: [
     { period: "2026 - Present", role: "Senior Software Engineer", company: "NYC Public Schools", description: "Own the Polaris OFNS integration end-to-end, translating complex business workflows into production solutions across Angular, C#/.NET, SQL Server, AWS, and REST APIs." },
