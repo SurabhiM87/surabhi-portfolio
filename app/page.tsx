@@ -1,25 +1,12 @@
 "use client";
 
 import { motion } from "framer-motion";
-import { ArrowDownRight, ArrowUpRight, Boxes, Braces, Cloud, Code2, Database, Layers3, Mail, Menu, Network, Sparkles, TestTube2, Users, X, Zap } from "lucide-react";
+import { ArrowDownRight, ArrowUpRight, BookOpen, Boxes, ChefHat, Code2, HandHeart, Layers3, Mail, Menu, Network, Sparkles, Users, X, Zap } from "lucide-react";
 import { useState } from "react";
+import { portfolio } from "../src/data/portfolio";
 
-const techGroups = [
-  { name: "Frontend", icon: Code2, color: "mint", items: ["React", "Next.js", "TypeScript", "JavaScript", "Angular", "HTML", "CSS"] },
-  { name: "Backend", icon: Braces, color: "peach", items: ["Java", "Spring Boot", "JPA / Hibernate", "Node.js", "Express", "C#", ".NET", "REST APIs"] },
-  { name: "Cloud & Infrastructure", icon: Cloud, color: "lilac", items: ["AWS", "Docker", "Kubernetes", "CI/CD", "GitHub Actions", "Jenkins"] },
-  { name: "Data & Systems", icon: Database, color: "lime", items: ["SQL Server", "Relational databases", "Caching", "Redis", "Distributed systems", "API architecture"] },
-  { name: "Testing & Automation", icon: TestTube2, color: "blue", items: ["Playwright", "Jest", "Puppeteer", "Automated testing"] },
-  { name: "AI & Developer Tools", icon: Sparkles, color: "yellow", items: ["OpenAI APIs", "Codex", "LLM-assisted development", "AI-powered automation"] },
-];
-
-const projects = [
-  { number: "01", title: "Showtimes Platform", label: "Distributed systems", summary: "Owned an international showtimes platform end-to-end, designing for freshness, speed, and graceful failure across upstream providers.", tech: ["Node.js", "Express", "AWS", "Kubernetes"], featured: true },
-  { number: "02", title: "Retail API", label: "Backend architecture", summary: "Built product-feed ingestion and decisioning services powering dynamic advertising experiences across multi-instance cloud deployments.", tech: ["Node.js", "APIs", "Caching", "Cloud"] },
-  { number: "03", title: "demo.kargo.com", label: "Interactive product", summary: "Built and evolved a Next.js application that recreates publisher environments to preview ads across desktop, mobile, and connected TV.", tech: ["React", "Next.js", "TypeScript", "Puppeteer"] },
-  { number: "04", title: "AI Page Rebuilder", label: "AI engineering", summary: "Created an AI-assisted system that analyzes webpages and reconstructs their structure as React implementations using browser automation and LLMs.", tech: ["React", "Puppeteer", "OpenAI", "Codex"] },
-  { number: "05", title: "Enterprise Applications", label: "Public sector", summary: "Contributed to robust enterprise applications for the New York City Department of Education, built for complex, high-impact workflows.", tech: ["Java", "Enterprise systems"] },
-];
+const techGroups = portfolio.technologyGroups;
+const projects = portfolio.projects;
 
 const fade = { initial: { opacity: 0, y: 24 }, whileInView: { opacity: 1, y: 0 }, viewport: { once: true, margin: "-80px" }, transition: { duration: .55 } };
 
@@ -30,16 +17,16 @@ export default function Home() {
     <main id="top">
       <nav className="nav shell" aria-label="Primary navigation">
         <a className="mark" href="#top" aria-label="Surabhi Mendiratta, home">SM<span>.</span></a>
-        <div className={`navLinks ${menu ? "open" : ""}`}><a href="#about" onClick={() => setMenu(false)}>About</a><a href="#universe" onClick={() => setMenu(false)}>Universe</a><a href="#work" onClick={() => setMenu(false)}>Work</a><a className="navCta" href="#contact" onClick={() => setMenu(false)}>Let&apos;s talk <ArrowUpRight size={15}/></a></div>
+        <div className={`navLinks ${menu ? "open" : ""}`}><a href="#about" onClick={() => setMenu(false)}>About</a><a href="#universe" onClick={() => setMenu(false)}>Universe</a><a href="#work" onClick={() => setMenu(false)}>Work</a><a href="#beyond" onClick={() => setMenu(false)}>Beyond</a><a className="navCta" href="#contact" onClick={() => setMenu(false)}>Let&apos;s talk <ArrowUpRight size={15}/></a></div>
         <button className="menuButton" onClick={() => setMenu(!menu)} aria-label="Toggle navigation" aria-expanded={menu}>{menu ? <X/> : <Menu/>}</button>
       </nav>
 
       <section className="hero shell">
         <motion.div className="heroCopy" initial={{opacity:0,y:20}} animate={{opacity:1,y:0}} transition={{duration:.65}}>
           <p className="eyebrow"><span /> Hi, I&apos;m Surabhi 👋</p><h1>Engineering thoughtful products, <em>end to end.</em></h1><p className="role">Senior Full-Stack Software Engineer</p>
-          <p className="lede">I build products from the UI all the way down to the systems that keep them running—turning ambiguous problems into reliable, scalable, user-friendly software.</p>
-          <div className="actions"><a className="button primary" href="#work">Explore my work <ArrowDownRight size={17}/></a><a className="button quiet" href="#contact">View resume</a></div>
-          <div className="socialRow"><a href="https://linkedin.com" target="_blank" rel="noreferrer"><Network size={16}/> LinkedIn</a><a href="https://github.com" target="_blank" rel="noreferrer"><Code2 size={16}/> GitHub</a></div>
+          <p className="lede">{portfolio.bio}</p>
+          <div className="actions"><a className="button primary" href="#work">Explore my work <ArrowDownRight size={17}/></a><a className="button quiet" href={portfolio.resume}>View resume</a></div>
+          <div className="socialRow"><a href={portfolio.social.linkedin} target="_blank" rel="noreferrer"><Network size={16}/> LinkedIn</a><a href={portfolio.social.github} target="_blank" rel="noreferrer"><Code2 size={16}/> GitHub</a></div>
         </motion.div>
         <motion.div className="ecosystem" aria-label="A selection of technologies in Surabhi's toolkit" initial={{opacity:0,scale:.92}} animate={{opacity:1,scale:1}} transition={{duration:.7,delay:.15}}><div className="orbit orbitOne"/><div className="orbit orbitTwo"/><div className="core"><span>SM</span><small>FULL STACK</small></div>{["React","Next.js","TypeScript","Java","AWS","AI"].map((item,index)=><motion.div whileHover={{scale:1.1,y:-4}} className={`techNode node${index+1}`} key={item}>{item}</motion.div>)}<div className="note">From pixels<br/>to platforms <span>✦</span></div></motion.div>
       </section>
@@ -58,8 +45,13 @@ export default function Home() {
         <div className="projects">{projects.map((project)=><motion.article {...fade} className={`projectCard ${project.featured?"featured":""}`} key={project.title}><div className="projectMeta"><span>{project.number}</span><span>{project.label}</span></div><h3>{project.title}</h3><p>{project.summary}</p>{project.featured&&<div className="architecture" aria-label="Request caching and fallback architecture"><div><span>Request</span><small>client</small></div><b>→</b><div className="cache"><span>Smart cache</span><small>ETag · Last-Modified</small></div><b>→</b><div><span>Provider</span><small>fresh data</small></div><div className="fallback"><Network size={16}/><span>If unavailable → resilient fallback</span></div></div>}<div className="tags">{project.tech.map(t=><span key={t}>{t}</span>)}</div><div className="projectArrow"><ArrowUpRight/></div></motion.article>)}</div>
       </section>
 
-      <section className="principles section"><div className="shell"><motion.div {...fade} className="principleQuote"><Sparkles/><blockquote>Good engineering is less about showing complexity—and more about making complexity feel simple.</blockquote></motion.div><div className="principleGrid"><div><span>01</span><h3>Product-minded</h3><p>I care about the outcome, not just the implementation.</p></div><div><span>02</span><h3>Systems-aware</h3><p>I design for real traffic, change, failure, and maintenance.</p></div><div><span>03</span><h3>Always learning</h3><p>I&apos;m curious about better tools, patterns, and possibilities.</p></div></div></div></section>
-      <section className="contact section shell" id="contact"><motion.div {...fade} className="contactCard"><p className="kicker">Let&apos;s build something good</p><h2>Have an interesting problem?</h2><p>I&apos;m always happy to connect with thoughtful people working on meaningful products.</p><div className="contactActions"><a className="button light" href="mailto:surabhi@example.com"><Mail size={17}/> Say hello</a><a href="https://linkedin.com" target="_blank" rel="noreferrer">Connect on LinkedIn <ArrowUpRight size={16}/></a></div><div className="contactDoodle"><Layers3/><span>ideas → systems → impact</span></div></motion.div></section>
+      <section className="principles section"><div className="shell"><motion.div {...fade} className="principleQuote"><Sparkles/><div><p className="kicker">04 / Engineering philosophy</p><blockquote>Own the problem, not just the ticket.</blockquote></div></motion.div><div className="principleGrid philosophyGrid">{portfolio.principles.map((principle,index)=><div key={principle}><span>{String(index+1).padStart(2,"0")}</span><h3>{principle}</h3></div>)}</div></div></section>
+
+      <section className="beyond section" id="beyond"><div className="shell"><motion.div {...fade} className="sectionIntro split"><div><p className="kicker">05 / Beyond the code</p><h2>There&apos;s more to me than code.</h2></div><p>The best work is grounded in curiosity, community, and a life with room for things that matter beyond a screen.</p></motion.div><div className="beyondGrid">{portfolio.beyondCode.map((item,index)=>{const Icon=[HandHeart,ChefHat,BookOpen][index];return <motion.article {...fade} whileHover={{y:-7,rotate:index===1?.7:-.4}} className={`beyondCard beyond${index+1}`} key={item.title}><div className="beyondIllustration"><Icon/><span>{index===0?"♥":index===1?"taste · tweak · share":"? → !"}</span></div><p>0{index+1}</p><h3>{item.title}</h3><p>{item.description}</p></motion.article>})}</div></div></section>
+
+      <section className="journey section shell" id="journey"><motion.div {...fade} className="sectionIntro split"><div><p className="kicker">06 / Career journey</p><h2>A career built layer by layer.</h2></div><p>This timeline is ready for your real career history. Edit the central portfolio data file when you&apos;re ready—no component changes needed.</p></motion.div><div className="timeline">{portfolio.experience.map((item,index)=><motion.article {...fade} key={index}><div className="timelineDot">{index+1}</div><p>{item.period}</p><div><h3>{item.role}</h3><strong>{item.company}</strong><p>{item.description}</p></div></motion.article>)}</div></section>
+
+      <section className="contact section shell" id="contact"><motion.div {...fade} className="contactCard"><p className="kicker">Let&apos;s build something interesting.</p><h2>Have an interesting problem?</h2><p>I&apos;m always happy to connect with thoughtful people working on meaningful products.</p><div className="contactActions"><a className="button light" href={`mailto:${portfolio.email}`}><Mail size={17}/> Say hello</a><a href={portfolio.social.linkedin} target="_blank" rel="noreferrer">LinkedIn <ArrowUpRight size={16}/></a><a href={portfolio.social.github} target="_blank" rel="noreferrer">GitHub <ArrowUpRight size={16}/></a></div><div className="contactDoodle"><Layers3/><span>ideas → systems → impact</span></div></motion.div></section>
       <footer className="footer shell"><a className="mark" href="#top">SM<span>.</span></a><p>Designed &amp; built with care © {new Date().getFullYear()}</p><a href="#top">Back to top ↑</a></footer>
     </main>
   );
