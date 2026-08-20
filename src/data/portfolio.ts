@@ -4,9 +4,9 @@ export const portfolio = {
   name: "Surabhi Mendiratta",
   title: "Senior Full-Stack Software Engineer",
   bio: "I build products from the UI all the way down to the systems that keep them running—turning ambiguous problems into reliable, scalable, user-friendly software.",
-  email: "surabhi@example.com",
+  email: "surabhi.mendiratta@gmail.com",
   social: {
-    linkedin: "https://linkedin.com",
+    linkedin: "https://www.linkedin.com/in/surabhi-m-38875539/",
     github: "https://github.com",
   },
   resume: "/resume.pdf",
@@ -27,13 +27,14 @@ export const portfolio = {
   ],
   principles: ["Own the problem, not just the ticket.", "Simple systems beat clever systems.", "Design for failure.", "Understand the user before designing the architecture.", "Automate repetitive work.", "Keep learning."],
   beyondCode: [
-    { title: "Harmony Power", description: "I volunteer with Harmony Power, supporting programs focused on empowering children and communities.", icon: "heart" },
-    { title: "Cooking", description: "I love cooking and experimenting with recipes—ingredients, iteration, and eventually something people enjoy.", icon: "cooking" },
-    { title: "Learning", description: "I genuinely enjoy learning new technologies and understanding how systems work.", icon: "learning" },
+    { title: "Harmony Power", description: "I volunteer as Community Outreach Manager, supporting programs focused on empowering children and communities.", href: "https://harmonypowernow.org/", image: "/images/harmony-power.jpeg" },
+    { title: "Cooking", description: "I love cooking and experimenting with recipes—ingredients, iteration, and eventually something people enjoy.", href: "https://www.instagram.com/make_this_at_home/", image: "/images/cooking.png" },
+    { title: "Learning", description: "I genuinely enjoy learning new technologies and understanding how systems work.", href: null, image: null },
   ],
   experience: [
-    { period: "Add dates", role: "Add role", company: "Add company", description: "Add a short description of your impact and responsibilities." },
-    { period: "Add dates", role: "Add role", company: "Add company", description: "Add a short description of your impact and responsibilities." },
-    { period: "Add dates", role: "Add role", company: "Add company", description: "Add a short description of your impact and responsibilities." },
+    { period: "2026 - Present", role: "Senior Software Engineer", company: "NYC Public Schools", description: "Own the Polaris OFNS integration end-to-end, translating complex business workflows into production solutions across Angular, C#/.NET, SQL Server, AWS, and REST APIs." },
+    { period: "2017 - 2025", role: "Senior Software Engineer", company: "Kargo", description: "Architected resilient platforms and APIs, built full-stack advertising products, led technical design, and created AI-assisted developer tooling across Node.js, React, Next.js, AWS, and Kubernetes." },
+    { period: "2012 - 2016", role: "Web Developer", company: "SportsYou", description: "Developed full-stack features for a social sports platform using Angular, C#, and REST APIs, while supporting CI/CD and production debugging." },
+    { period: "2009 - 2012", role: "Software Developer", company: "Larsen & Toubro", description: "Developed Java-based engineering and reverse-engineering tools for automotive and off-highway projects, automating testing and setup workflows." },
   ],
 } as const;

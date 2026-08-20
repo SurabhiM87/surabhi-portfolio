@@ -48,11 +48,11 @@ Place your real PDF at:
 public/resume.pdf
 ```
 
-The existing resume button already points there. No fake resume is included.
+The current resume is already included there, and the resume button points to it. Replace that file with a newer PDF whenever needed, keeping the same filename.
 
 ## Update contact links
 
-Replace the placeholder `email`, `social.linkedin`, and `social.github` values in `src/data/portfolio.ts`.
+The email and LinkedIn values come from the current resume. Replace the placeholder `social.github` value in `src/data/portfolio.ts` with the correct GitHub profile URL.
 
 ## Project structure
 
@@ -63,7 +63,7 @@ app/
   page.tsx           Portfolio sections and interactions
 public/
   og.png             Social-sharing card
-  resume.pdf         Add your real resume here
+  resume.pdf         Current downloadable resume
 src/data/
   portfolio.ts       Central personal content and configuration
 .openai/
