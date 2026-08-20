@@ -24,7 +24,7 @@ export async function generateMetadata(): Promise<Metadata> {
   return {
     title,
     description,
-    icons: { icon: "/favicon.svg", shortcut: "/favicon.svg" },
+    icons: { icon: "/favicon.png", shortcut: "/favicon.png", apple: "/favicon.png" },
     openGraph: { title, description, type: "website", images: [{ url: image, width: 1731, height: 909, alt: "Surabhi Mendiratta — From pixels to platforms" }] },
     twitter: { card: "summary_large_image", title, description, images: [image] },
   };
