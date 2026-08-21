@@ -1,4 +1,4 @@
-# Surabhi Mendiratta — Portfolio
+# Surabhi Mendiratta — Portfolio https://surabhimendiratta.com/
 
 A responsive personal portfolio built with Next.js-compatible Vinext, React, TypeScript, Tailwind CSS, Framer Motion, and Lucide icons. It is configured for deployment through OpenAI Sites and can also be adapted for Vercel.
 
