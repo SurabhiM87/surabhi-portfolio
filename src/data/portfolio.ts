@@ -3,7 +3,7 @@ import { Braces, Cloud, Code2, Database, Sparkles, TestTube2 } from "lucide-reac
 export const portfolio = {
   name: "Surabhi Mendiratta",
   title: "Senior Full-Stack Software Engineer",
-  bio: "I build products from the UI all the way down to the systems that keep them running—turning ambiguous problems into reliable, scalable, user-friendly software.",
+  bio: "I build products from the UI all the way down to the systems that keep them running. I enjoy turning ambiguous problems into reliable, scalable, user-friendly software.",
   email: "surabhi.mendiratta@gmail.com",
   social: {
     linkedin: "https://www.linkedin.com/in/surabhi-m-38875539/",
@@ -19,11 +19,11 @@ export const portfolio = {
     { name: "AI & Developer Tools", icon: Sparkles, color: "yellow", items: ["Generative AI", "OpenAI APIs", "Codex", "LLM-assisted development", "AI developer tooling", "AI-powered automation"] },
   ],
   projects: [
-    { number: "01", title: "Showtimes Platform", label: "Distributed systems", summary: "Owned an international showtimes platform end-to-end, designing for freshness, speed, and graceful failure across upstream providers.", tech: ["Node.js", "Express", "Caching", "ETags", "Last-Modified", "AWS", "Kubernetes"], featured: true },
-    { number: "02", title: "Retail API", label: "Backend architecture", summary: "Built product-feed ingestion and decisioning services used for advertising experiences, with scheduled ingestion, caching, and multi-instance cloud deployments.", tech: ["Node.js", "APIs", "Scheduled ingestion", "Caching", "Cloud"] },
-    { number: "03", title: "demo.kargo.com", label: "Interactive product", summary: "Built and evolved a Next.js application that recreates publisher environments to preview advertising experiences across desktop, mobile, and connected TV.", tech: ["React", "Next.js", "TypeScript", "Puppeteer"] },
-    { number: "04", title: "AI Page Rebuilder", label: "AI engineering", summary: "Built an AI-assisted system that analyzes webpages and reconstructs their structure as React implementations using browser automation and LLM-assisted code generation.", tech: ["Generative AI", "React", "Puppeteer", "OpenAI", "Codex"] },
-    { number: "05", title: "Enterprise Applications", label: "Public sector", summary: "Worked on enterprise applications for the New York City Department of Education, contributing to complex, high-impact workflows without exposing proprietary implementation details.", tech: ["Angular", "C#", ".NET", ".NET APIs", "SQL Server", "REST APIs", "JWT"] },
+    { number: "01", title: "Showtimes Platform", label: "Distributed systems", summary: "Owned an international showtimes platform end-to-end, designing for freshness, speed, and graceful failure across upstream providers.", tech: ["Node.js", "Express", "Caching", "ETags", "Last-Modified", "AWS", "Kubernetes"], featured: true, url: null },
+    { number: "02", title: "Retail API", label: "Backend architecture", summary: "Built product-feed ingestion and decisioning services used for advertising experiences, with scheduled ingestion, caching, and multi-instance cloud deployments.", tech: ["Node.js", "APIs", "Scheduled ingestion", "Caching", "Cloud"], url: null },
+    { number: "03", title: "demo.kargo.com", label: "Interactive product", summary: "Built and evolved a Next.js application that recreates publisher environments to preview advertising experiences across desktop, mobile, and connected TV.", tech: ["React", "Next.js", "TypeScript", "Puppeteer"], url: "https://demo.kargo.com/" },
+    { number: "04", title: "AI Page Rebuilder", label: "AI engineering", summary: "Built an AI-assisted system that analyzes webpages and reconstructs their structure as React implementations using browser automation and LLM-assisted code generation.", tech: ["Generative AI", "React", "Puppeteer", "OpenAI", "Codex"], url: "https://github.com/SurabhiM87/ai-page-rebuilder" },
+    { number: "05", title: "Enterprise Applications", label: "Public sector", summary: "Worked on enterprise applications for the New York City Department of Education, contributing to complex, high-impact workflows without exposing proprietary implementation details.", tech: ["Angular", "C#", ".NET", ".NET APIs", "SQL Server", "REST APIs", "JWT"], url: null },
   ],
   principles: ["Own the problem, not just the ticket.", "Simple systems beat clever systems.", "Design for failure.", "Understand the user before designing the architecture.", "Automate repetitive work.", "Keep learning."],
   beyondCode: [

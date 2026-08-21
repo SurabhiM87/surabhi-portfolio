@@ -26,7 +26,7 @@ export const metadata: Metadata = {
     type: "website",
     url: "/",
     siteName: "Surabhi Mendiratta",
-    images: [{ url: "/og.png", width: 1731, height: 909, alt: "Surabhi Mendiratta — From pixels to platforms" }],
+    images: [{ url: "/og.png", width: 1731, height: 909, alt: "Surabhi Mendiratta: From pixels to platforms" }],
   },
   twitter: {
     card: "summary_large_image",
