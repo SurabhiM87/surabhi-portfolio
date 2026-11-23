@@ -12,8 +12,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-const title = "Surabhi Mendiratta | Senior Full-Stack Software Engineer";
-const description = "Senior Full-Stack Software Engineer building thoughtful, scalable products end to end across frontend, backend, cloud, and AI.";
+const title = "Surabhi Mendiratta | Software Engineer & Solutions Development";
+const description = "Software engineer connecting business needs, client engagement, stakeholder collaboration, and end-to-end technical delivery.";
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://surabhimendiratta.com"),
